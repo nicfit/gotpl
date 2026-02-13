@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/belitre/gotpl/commands/options"
-	"github.com/belitre/gotpl/tpl"
+	"github.com/nicfit/gotpl/commands/options"
+	"github.com/nicfit/gotpl/tpl"
 	"github.com/spf13/cobra"
 )
 
@@ -14,7 +14,7 @@ var rootCmd = &cobra.Command{
 	Use:   "gotpl template_file1 templates_dir ...",
 	Short: "CLI tool for Golang templates",
 	Long: `gotpl - CLI tool for Golang templates
-https://github.com/belitre/gotpl
+https://github.com/nicfit/gotpl
 			`,
 	Args: validateArgs,
 	Run:  runCommand,

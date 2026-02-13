@@ -1,4 +1,4 @@
-module github.com/belitre/gotpl
+module github.com/nicfit/gotpl
 
 go 1.13
 

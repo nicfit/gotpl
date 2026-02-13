@@ -11,7 +11,7 @@ import (
 	"text/template"
 
 	"github.com/Masterminds/sprig/v3"
-	"github.com/belitre/gotpl/commands/options"
+	"github.com/nicfit/gotpl/commands/options"
 	"github.com/ghodss/yaml"
 	"github.com/otiai10/copy"
 	"k8s.io/helm/pkg/chartutil"

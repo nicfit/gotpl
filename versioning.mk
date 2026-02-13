@@ -11,10 +11,10 @@ BINARY_VERSION ?= ${GIT_TAG}
 
 # Only set Version if building a tag or VERSION is set
 ifneq ($(BINARY_VERSION),)
-	LDFLAGS += -X github.com/belitre/gotpl/commands.Version=${BINARY_VERSION}
+	LDFLAGS += -X github.com/nicfit/gotpl/commands.Version=${BINARY_VERSION}
 endif
 
-LDFLAGS += -X github.com/belitre/gotpl/commands.GitCommit=${GIT_COMMIT}
+LDFLAGS += -X github.com/nicfit/gotpl/commands.GitCommit=${GIT_COMMIT}
 
 info:
 	 @echo "Version:           ${VERSION}"
