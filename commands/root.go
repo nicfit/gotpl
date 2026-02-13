@@ -45,14 +45,14 @@ func validateArgs(cmd *cobra.Command, args []string) error {
 
 func runCommand(cmd *cobra.Command, args []string) {
 	if err := tpl.ParseTemplate(args, opt); err != nil {
-		fmt.Println(err)
+		_, _ = fmt.Fprintf(os.Stderr, err.Error())
 		os.Exit(1)
 	}
 }
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
+		_, _ = fmt.Fprintf(os.Stderr, err.Error())
 		os.Exit(1)
 	}
 }
