@@ -21,7 +21,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gotpl",
 	Long:  `Print the version number of gotpl`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("gotpl-%s\n", Version)
+		fmt.Printf("gotpl[nicfit]-%s\n", Version)
 		if len(GitCommit) > 0 {
 			fmt.Printf("git commit: %s\n", GitCommit)
 		}
