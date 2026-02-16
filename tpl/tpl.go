@@ -11,8 +11,8 @@ import (
 	"text/template"
 
 	"github.com/Masterminds/sprig/v3"
-	"github.com/nicfit/gotpl/commands/options"
 	"github.com/ghodss/yaml"
+	"github.com/nicfit/gotpl/commands/options"
 	"github.com/otiai10/copy"
 	"k8s.io/helm/pkg/chartutil"
 	"k8s.io/helm/pkg/strvals"
@@ -46,12 +46,12 @@ func executeSingleTemplate(values map[string]interface{}, tplFile string, isStri
 
 	tpl, err := tpl.ParseFiles(tplFile)
 	if err != nil {
-		return "", fmt.Errorf("Error parsing template(s): %v", err)
+		return "", fmt.Errorf("error parsing template(s): %v", err)
 	}
 
 	err = tpl.Execute(buf, values)
 	if err != nil {
-		return "", fmt.Errorf("Failed to parse standard input: %v", err)
+		return "", fmt.Errorf("failed to parse standard input: %v", err)
 	}
 
 	// Work around to remove the "<no value>" go templates add.
@@ -63,7 +63,7 @@ func executeTemplates(values map[string]interface{}, tplFileNames []string, isSt
 	var tmpDir string
 	var err error
 	if len(outputPath) > 0 {
-		tmpDir, err = ioutil.TempDir("", "")
+		tmpDir, err = os.MkdirTemp("", "")
 
 		if err != nil {
 			return "", err

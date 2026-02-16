@@ -34,10 +34,10 @@ func validateArgs(cmd *cobra.Command, args []string) error {
 	if len(opt.OutputPath) > 0 {
 		info, err := os.Stat(opt.OutputPath)
 		if err != nil {
-			return fmt.Errorf("Path %s not found: %s", opt.OutputPath, err)
+			return fmt.Errorf("path %s not found: %s", opt.OutputPath, err)
 		}
 		if !info.IsDir() {
-			return fmt.Errorf("Path %s is not a directory", opt.OutputPath)
+			return fmt.Errorf("path %s is not a directory", opt.OutputPath)
 		}
 	}
 	return nil
