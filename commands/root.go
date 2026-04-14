@@ -62,4 +62,6 @@ func init() {
 	rootCmd.Flags().StringArrayVarP(&opt.SetValues, "set", "s", []string{}, "<key>=<value> pairs (take precedence over values in --values files)")
 	rootCmd.Flags().BoolVarP(&opt.IsStrict, "strict", "", false, "If strict is enabled, template rendering will fail if a template references a value that was not passed in")
 	rootCmd.Flags().StringVarP(&opt.OutputPath, "output", "o", "", "If an output path is provided, instead of stdout, gotpl will generate the output as files in the specified path")
+	rootCmd.Flags().StringVarP(&opt.TopLevelKey, "top-level-key", "K", "",
+		"Specify top-level key for template variable names.")
 }

@@ -145,6 +145,9 @@ func ParseTemplate(tplFileNames []string, opts *options.Options) error {
 	if err != nil {
 		return err
 	}
+	if opts.TopLevelKey != "" {
+		values[opts.TopLevelKey] = values
+	}
 
 	result, err := executeTemplates(values, tplFileNames, opts.IsStrict, opts.OutputPath)
 	if err != nil {
